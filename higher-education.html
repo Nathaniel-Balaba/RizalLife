@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizal's Higher Education - Life Abroad | Rizal Learning Platform</title>
+    <meta name="description" content="Follow José Rizal's educational journey from Manila to Europe, where he developed into a world-class intellectual and reformist.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="book-open" class="h-8 w-8 text-blue-600 dark:text-blue-400"></i>
+                        <span class="font-bold text-xl text-gray-800 dark:text-white">Rizal Learning</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="rizal-law.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Rizal Law</a>
+                    <a href="historical-context.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Historical Context</a>
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Early Life</a>
+                    <a href="higher-education.html" class="text-blue-600 dark:text-blue-400 px-3 py-2 text-sm font-medium">Higher Education</a>
+
+                    <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ml-2" onclick="toggleTheme()">
+                        <i data-lucide="sun" class="h-5 w-5 text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                        <i data-lucide="moon" class="h-5 w-5 text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleTheme()">
+                        <i data-lucide="sun" class="h-5 w-5 text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                        <i data-lucide="moon" class="h-5 w-5 text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Home</a>
+                    <a href="rizal-law.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Rizal Law</a>
+                    <a href="historical-context.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Historical Context</a>
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Early Life</a>
+                    <a href="higher-education.html" class="text-blue-600 dark:text-blue-400 block px-3 py-2 text-base font-medium">Higher Education</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+        <!-- Back Button -->
+        <div class="max-w-4xl mx-auto px-4 pt-6">
+            <button onclick="goBack()" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <i data-lucide="arrow-left" class="h-4 w-4 mr-2"></i>
+                Back
+            </button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900/50 rounded-full mb-4">
+                        <i data-lucide="graduation-cap" class="h-8 w-8 text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 animate-slideIn">
+                        Rizal's Higher Education
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-6 animate-slideIn" style="animation-delay: 0.2s">
+                        Academic Journey from Manila to Europe and Beyond
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-2 animate-slideIn" style="animation-delay: 0.4s">
+                        <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                            1872-1882 Philippines
+                        </span>
+                        <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
+                            1882-1887 Europe
+                        </span>
+                        <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">
+                            Polyglot Scholar
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="py-8 px-4">
+            <div class="max-w-4xl mx-auto space-y-12">
+                <!-- Educational Timeline -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                        <i data-lucide="clock" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3"></i>
+                        Educational Timeline
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                            <div class="flex-shrink-0 w-24 text-center">
+                                <div class="font-bold text-blue-700 dark:text-blue-300">1872-1877</div>
+                                <div class="text-xs text-blue-600 dark:text-blue-400">5 years</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-800 dark:text-white">Ateneo Municipal de Manila</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Bachelor of Arts degree, graduated with highest honors (sobresaliente)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                            <div class="flex-shrink-0 w-24 text-center">
+                                <div class="font-bold text-green-700 dark:text-green-300">1877-1882</div>
+                                <div class="text-xs text-green-600 dark:text-green-400">5 years</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-800 dark:text-white">University of Santo Tomas</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Philosophy, Letters, and Medicine (incomplete due to discrimination)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                            <div class="flex-shrink-0 w-24 text-center">
+                                <div class="font-bold text-purple-700 dark:text-purple-300">1882-1887</div>
+                                <div class="text-xs text-purple-600 dark:text-purple-400">5 years</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-semibold text-gray-800 dark:text-white">European Universities</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Medicine in Madrid, specialized studies in Paris and Heidelberg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ateneo Municipal -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                        <i data-lucide="school" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3"></i>
+                        Ateneo Municipal de Manila (1872-1877)
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">The Jesuit education that shaped Rizal's character and intellectual foundation</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Academic Excellence</h3>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Graduated as <em>sobresaliente</em> (outstanding)</li>
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Received the degree Bachelor of Arts</li>
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Won numerous academic prizes</li>
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Consistently ranked at the top of his class</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Extracurricular Activities</h3>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="users" class="h-4 w-4 text-green-600 mr-2"></i>Member of the Marian Congregation</li>
+                                    <li class="flex items-center"><i data-lucide="book" class="h-4 w-4 text-green-600 mr-2"></i>Active in literary and debating societies</li>
+                                    <li class="flex items-center"><i data-lucide="theater" class="h-4 w-4 text-green-600 mr-2"></i>Participated in school plays and performances</li>
+                                    <li class="flex items-center"><i data-lucide="crown" class="h-4 w-4 text-green-600 mr-2"></i>Developed leadership skills</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Jesuit Influence</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">
+                                    The Jesuit education at Ateneo emphasized discipline, critical thinking, and moral formation. The rigorous academic environment and the mentorship of Jesuit priests helped develop Rizal's intellectual capabilities and ethical foundation that would guide him throughout his life.
+                                </p>
+                            </div>
+
+                            <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Notable Teachers</h3>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Fr. José Bech:</strong> His favorite teacher who encouraged his studies</li>
+                                    <li><strong>Fr. Francisco de Paula Sánchez:</strong> Influenced his love for literature</li>
+                                    <li><strong>Fr. Federico Faura:</strong> Taught astronomy and meteorology</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-900 dark:to-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Impact on Rizal's Development</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                            The Ateneo years were crucial in shaping Rizal's character. The Jesuit emphasis on excellence, service to others, and intellectual rigor became hallmarks of his personality. His experiences here also exposed him to European ideas and liberal thinking that would later influence his reform advocacy. The school's motto "Ad Majorem Dei Gloriam" (For the Greater Glory of God) instilled in him a sense of purpose that transcended personal ambition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- University of Santo Tomas -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                        <i data-lucide="building" class="h-6 w-6 text-green-600 dark:text-green-400 mr-3"></i>
+                        University of Santo Tomas (1877-1882)
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Medical studies and growing disillusionment with colonial education</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Course of Study</h3>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Philosophy and Letters (1877-1879):</strong> Foundational studies</li>
+                                    <li><strong>Medicine (1878-1882):</strong> Primary focus but incomplete</li>
+                                    <li><strong>Surveying (1881-1882):</strong> Additional practical skills</li>
+                                    <li><strong>Status:</strong> Did not complete medical degree in Manila</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Academic Performance</h3>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-blue-600 mr-2"></i>Maintained good grades despite challenges</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-blue-600 mr-2"></i>Won prizes in poetry competitions</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-blue-600 mr-2"></i>Excelled in literature and humanities</li>
+                                    <li class="flex items-center"><i data-lucide="check" class="h-4 w-4 text-blue-600 mr-2"></i>Showed aptitude for medical studies</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Challenges Faced</h3>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="x" class="h-4 w-4 text-red-600 mr-2"></i>Discrimination by Dominican professors</li>
+                                    <li class="flex items-center"><i data-lucide="x" class="h-4 w-4 text-red-600 mr-2"></i>Outdated teaching methods</li>
+                                    <li class="flex items-center"><i data-lucide="x" class="h-4 w-4 text-red-600 mr-2"></i>Limited access to modern textbooks</li>
+                                    <li class="flex items-center"><i data-lucide="x" class="h-4 w-4 text-red-600 mr-2"></i>Racial prejudice in the classroom</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6">
+                                <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Growing Awareness</h3>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">
+                                    His experiences at UST opened Rizal's eyes to the limitations of colonial education and the discrimination faced by Filipino students. This motivated his later advocacy for educational reforms and equal treatment of Filipinos in academic institutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Journey to Europe -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                        <i data-lucide="plane" class="h-6 w-6 text-purple-600 dark:text-purple-400 mr-3"></i>
+                        Journey to Europe (1882)
+                    </h2>
+                    <div class="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700 rounded-lg p-6">
+                        <h3 class="font-semibold text-purple-800 dark:text-purple-200 mb-4">The Secret Departure</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                            On May 3, 1882, Rizal secretly left the Philippines aboard the steamship <em>Salvadora</em>, bound for Singapore. He did not inform his parents of his departure, knowing they would not approve of his plan to study in Europe. He left a letter explaining his decision only after he had already departed.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 dark:text-white">Reasons for Leaving</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="target" class="h-4 w-4 text-purple-600 mr-2"></i>Seek better educational opportunities</li>
+                                    <li class="flex items-center"><i data-lucide="shield" class="h-4 w-4 text-purple-600 mr-2"></i>Escape colonial discrimination</li>
+                                    <li class="flex items-center"><i data-lucide="eye" class="h-4 w-4 text-purple-600 mr-2"></i>Observe European society and culture</li>
+                                    <li class="flex items-center"><i data-lucide="graduation-cap" class="h-4 w-4 text-purple-600 mr-2"></i>Complete his medical studies</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 dark:text-white">Support System</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="dollar-sign" class="h-4 w-4 text-purple-600 mr-2"></i>Financial support from Paciano</li>
+                                    <li class="flex items-center"><i data-lucide="heart" class="h-4 w-4 text-purple-600 mr-2"></i>Encouragement from liberal friends</li>
+                                    <li class="flex items-center"><i data-lucide="file-text" class="h-4 w-4 text-purple-600 mr-2"></i>Letters of recommendation</li>
+                                    <li class="flex items-center"><i data-lucide="users" class="h-4 w-4 text-purple-600 mr-2"></i>Network of Filipino students abroad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- European Education -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                        <i data-lucide="globe" class="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3"></i>
+                        European Education (1882-1887)
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Academic pursuits across multiple European universities</p>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Madrid, Spain</h3>
+                            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li>• Universidad Central de Madrid</li>
+                                <li>• Completed medical degree (1884)</li>
+                                <li>• Philosophy and Letters degree</li>
+                                <li>• Active in Filipino student organizations</li>
+                                <li>• Wrote for La Solidaridad</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Paris, France</h3>
+                            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li>• Specialized in ophthalmology</li>
+                                <li>• Studied under Dr. Louis de Wecker</li>
+                                <li>• Worked at Hôpital Saint-Louis</li>
+                                <li>• Improved surgical skills</li>
+                                <li>• Exposed to French culture</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
+                            <h3 class="font-semibold mb-3 text-gray-800 dark:text-white">Heidelberg, Germany</h3>
+                            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                <li>• University of Heidelberg</li>
+                                <li>• Advanced ophthalmology studies</li>
+                                <li>• Under Prof. Otto Becker</li>
+                                <li>• Research and clinical practice</li>
+                                <li>• Wrote Noli Me Tangere</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 rounded-lg p-6">
+                        <h3 class="font-semibold mb-4 text-gray-800 dark:text-white">Academic Achievements in Europe</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 dark:text-white">Degrees Earned</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Licentiate in Medicine (Madrid, 1884)</li>
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Doctor of Medicine (Madrid, 1885)</li>
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Licentiate in Philosophy and Letters</li>
+                                    <li class="flex items-center"><i data-lucide="award" class="h-4 w-4 text-blue-600 mr-2"></i>Specialized certification in Ophthalmology</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-3 text-gray-800 dark:text-white">Research and Publications</h4>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li class="flex items-center"><i data-lucide="file-text" class="h-4 w-4 text-green-600 mr-2"></i>Medical research papers</li>
+                                    <li class="flex items-center"><i data-lucide="book" class="h-4 w-4 text-green-600 mr-2"></i>Literary works and essays</li>
+                                    <li class="flex items-center"><i data-lucide="newspaper" class="h-4 w-4 text-green-600 mr-2"></i>Contributions to scientific journals</li>
+                                    <li class="flex items-center"><i data-lucide="pen-tool" class="h-4 w-4 text-green-600 mr-2"></i>Cultural and political writings</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Major Works -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center">
+                        <i data-lucide="book-open" class="h-6 w-6 text-green-600 dark:text-green-400 mr-3"></i>
+                        Literary Works During European Studies
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
+                            <h3 class="font-semibold text-lg mb-4 text-gray-800 dark:text-white">Noli Me Tangere (1887)</h3>
+                            <div class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <p><strong>Written:</strong> Berlin, Germany</p>
+                                <p><strong>Published:</strong> March 1887</p>
+                                <p><strong>Significance:</strong> First major novel exposing colonial abuses</p>
+                                <p><strong>Impact:</strong> Immediately banned by Spanish authorities</p>
+                            </div>
+                            <div class="mt-4 p-4 bg-white dark:bg-gray-700 rounded-lg">
+                                <p class="text-xs text-gray-600 dark:text-gray-400">
+                                    This groundbreaking novel depicted the social cancer plaguing Philippine society under Spanish rule, focusing on the corruption of friars and colonial officials. It awakened Filipino national consciousness and inspired the reform movement.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+                            <h3 class="font-semibold text-lg mb-4 text-gray-800 dark:text-white">Other Notable Works</h3>
+                            <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                                <li>
+                                    <strong>Essays on Filipino Culture:</strong> Defending Filipino capabilities and intelligence against colonial stereotypes
+                                </li>
+                                <li>
+                                    <strong>Historical Research:</strong> Studies on pre-colonial Philippines and Malay civilization
+                                </li>
+                                <li>
+                                    <strong>Scientific Papers:</strong> Medical and anthropological studies published in European journals
+                                </li>
+                                <li>
+                                    <strong>Poems and Letters:</strong> Personal reflections and advocacy pieces for reform
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills and Languages -->
+                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800 rounded-xl shadow-lg p-8 text-white">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i data-lucide="award" class="h-6 w-6 mr-3"></i>
+                        Skills and Languages Acquired: The Renaissance Man
+                    </h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div>
+                            <h3 class="font-semibold mb-4">Languages Mastered</h3>
+                            <div class="space-y-3 text-sm text-indigo-100">
+                                <div>
+                                    <p><strong>European:</strong> Spanish, French, German, Italian, English, Portuguese, Catalan, Russian</p>
+                                </div>
+                                <div>
+                                    <p><strong>Classical:</strong> Latin, Greek, Hebrew, Arabic</p>
+                                </div>
+                                <div>
+                                    <p><strong>Asian:</strong> Tagalog, Cebuano, Ilocano, Pangasinan, Bikol, Japanese, Malay, Chinese</p>
+                                </div>
+                                <div>
+                                    <p><strong>Other:</strong> Sanskrit, Dutch</p>
+                                </div>
+                                <div class="bg-white/10 rounded-lg p-3 mt-4">
+                                    <p><strong>Total: 22 languages</strong></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold mb-4">Professional Skills</h3>
+                            <ul class="space-y-2 text-sm text-indigo-100">
+                                <li class="flex items-center"><i data-lucide="stethoscope" class="h-4 w-4 mr-2"></i>Medical practice and surgery</li>
+                                <li class="flex items-center"><i data-lucide="eye" class="h-4 w-4 mr-2"></i>Ophthalmology specialization</li>
+                                <li class="flex items-center"><i data-lucide="microscope" class="h-4 w-4 mr-2"></i>Scientific research</li>
+                                <li class="flex items-center"><i data-lucide="pen-tool" class="h-4 w-4 mr-2"></i>Academic writing</li>
+                                <li class="flex items-center"><i data-lucide="search" class="h-4 w-4 mr-2"></i>Clinical diagnosis</li>
+                                <li class="flex items-center"><i data-lucide="globe" class="h-4 w-4 mr-2"></i>Anthropological studies</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold mb-4">Artistic Talents</h3>
+                            <ul class="space-y-2 text-sm text-indigo-100">
+                                <li class="flex items-center"><i data-lucide="palette" class="h-4 w-4 mr-2"></i>Painting and sketching</li>
+                                <li class="flex items-center"><i data-lucide="hammer" class="h-4 w-4 mr-2"></i>Sculpture and carving</li>
+                                <li class="flex items-center"><i data-lucide="feather" class="h-4 w-4 mr-2"></i>Poetry and literature</li>
+                                <li class="flex items-center"><i data-lucide="music" class="h-4 w-4 mr-2"></i>Music and piano</li>
+                                <li class="flex items-center"><i data-lucide="home" class="h-4 w-4 mr-2"></i>Architecture and engineering</li>
+                                <li class="flex items-center"><i data-lucide="camera" class="h-4 w-4 mr-2"></i>Photography</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/10 rounded-lg p-6">
+                        <h3 class="font-semibold mb-4">The Complete Scholar</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-medium mb-3">Impact on His Advocacy</h4>
+                                <p class="text-sm text-indigo-100">
+                                    His European education exposed him to Enlightenment ideals, democratic principles, and modern scientific methods, which he later applied to his analysis of Philippine colonial problems. His multilingual abilities allowed him to access diverse sources of knowledge and communicate with intellectuals across Europe.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-3">Preparation for Leadership</h4>
+                                <p class="text-sm text-indigo-100">
+                                    The knowledge and skills acquired in Europe prepared Rizal to become an effective leader of the reform movement and a credible voice for Filipino aspirations. His comprehensive education made him a respected figure among European intellectuals and Filipino reformists alike.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <section class="py-12 px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-6 text-center">Continue Your Learning Journey</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="early-life.html" class="flex items-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors">
+                            <i data-lucide="heart" class="h-8 w-8 text-green-600 dark:text-green-400 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 dark:text-white">Early Life</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Family & Childhood</p>
+                            </div>
+                        </a>
+                        <a href="timeline.html" class="flex items-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors">
+                            <i data-lucide="clock" class="h-8 w-8 text-purple-600 dark:text-purple-400 mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 dark:text-white">Timeline</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">Life Journey</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="book-open" class="h-8 w-8 text-blue-400"></i>
+                        <span class="font-bold text-xl">Rizal Learning Platform</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        An interactive educational platform dedicated to understanding the life, works, and legacy of Dr. José Rizal, the Philippines' national hero.
+                    </p>
+                    <div class="flex space-x-4">
+                        <i data-lucide="github" class="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"></i>
+                        <i data-lucide="mail" class="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Learning Modules</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="rizal-law.html" class="hover:text-white transition-colors duration-200">Republic Act 1425</a></li>
+                        <li><a href="historical-context.html" class="hover:text-white transition-colors duration-200">19th Century Philippines</a></li>
+                        <li><a href="early-life.html" class="hover:text-white transition-colors duration-200">Early Life & Family</a></li>
+                        <li><a href="higher-education.html" class="hover:text-white transition-colors duration-200">Higher Education</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">About</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="timeline.html" class="hover:text-white transition-colors duration-200">Timeline</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors duration-200">Resources</a></li>
+                        <li><a href="feedback.html" class="hover:text-white transition-colors duration-200">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Rizal Learning Platform. Created for educational purposes in compliance with Republic Act 1425.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Dr. José Rizal - Interactive Learning Platform</title>
+    <meta name="description" content="Learn about the life, works, and legacy of Philippines national hero Dr. José Rizal through an interactive educational platform.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="book-open" class="h-8 w-8 text-blue-600 dark:text-blue-400"></i>
+                        <span class="font-bold text-xl text-gray-800 dark:text-white">Rizal Learning</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="rizal-law.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Rizal Law</a>
+                    <a href="historical-context.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Historical Context</a>
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Early Life</a>
+                    <a href="higher-education.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Higher Education</a>
+
+                    <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ml-2" onclick="toggleTheme()">
+                        <i data-lucide="sun" class="h-5 w-5 text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                        <i data-lucide="moon" class="h-5 w-5 text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleTheme()">
+                        <i data-lucide="sun" class="h-5 w-5 text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                        <i data-lucide="moon" class="h-5 w-5 text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Home</a>
+                    <a href="rizal-law.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Rizal Law</a>
+                    <a href="historical-context.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Historical Context</a>
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Early Life</a>
+                    <a href="higher-education.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Higher Education</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Large Rizal Image -->
+        <section class="relative py-12 px-4 bg-gradient-to-br from-blue-50 to-green-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <!-- Large Rizal Image -->
+                    <div class="lg:w-1/2 animate-float">
+                        <img src="images/jose.jpg" alt="Dr. José Rizal Portrait" class="rounded-lg shadow-xl object-cover w-full max-w-lg mx-auto border-4 border-white dark:border-gray-700">
+                    </div>
+                    
+                    <!-- Hero Text -->
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-6 animate-slideIn">
+                            Understanding Dr. José Rizal
+                        </h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 animate-slideIn" style="animation-delay: 0.2s">
+                            Explore the life, works, and enduring legacy of the Philippines' national hero through an interactive learning experience
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slideIn" style="animation-delay: 0.4s">
+                            <a href="#learning-modules" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300 transform hover:scale-105">
+                                <i data-lucide="book-open" class="mr-2 h-5 w-5"></i>
+                                Start Learning
+                            </a>
+                            <a href="timeline.html" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium rounded-md transition-colors duration-300 transform hover:scale-105">
+                                <i data-lucide="globe" class="mr-2 h-5 w-5"></i>
+                                Explore Timeline
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Navigation Cards -->
+        <section class="py-12 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">
+                    Explore Rizal's Life & Legacy
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="early-life.html" class="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <i data-lucide="heart" class="h-12 w-12 text-green-600 dark:text-green-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Early Life</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Discover Rizal's childhood, family, and formative years</p>
+                    </a>
+                    <a href="higher-education.html" class="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <i data-lucide="graduation-cap" class="h-12 w-12 text-blue-600 dark:text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Education</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Follow his academic journey through Europe and Asia</p>
+                    </a>
+                    <a href="#novels" class="bg-red-50 dark:bg-red-900/20 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center" onclick="openNovelsModal(); return false;">
+                        <i data-lucide="book-open" class="h-12 w-12 text-red-600 dark:text-red-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Literary Works</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Explore his novels that sparked revolution</p>
+                    </a>
+                    <a href="rizal-law.html" class="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                        <i data-lucide="scroll" class="h-12 w-12 text-amber-600 dark:text-amber-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Rizal Law</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Learn about Republic Act 1425 and its importance</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Overview -->
+        <section id="learning-modules" class="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 dark:text-white mb-12 animate-slideIn">
+                    Learning Modules
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Republic Act 1425 Card -->
+                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-all duration-300 cursor-pointer group animate-slideIn" style="animation-delay: 0.1s">
+                        <div class="p-6 text-center">
+                            <div class="mx-auto mb-4 p-3 bg-red-100 dark:bg-red-900/50 rounded-full w-fit">
+                                <i data-lucide="book-open" class="h-8 w-8 text-red-600 dark:text-red-400"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Republic Act 1425</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">The Rizal Law</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                Learn about the law that mandates the study of Rizal's life and works in Philippine schools.
+                            </p>
+                            <a href="rizal-law.html" class="inline-flex items-center justify-center w-full px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-md transition-colors">
+                                Explore <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Historical Context Card -->
+                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-all duration-300 cursor-pointer group animate-slideIn" style="animation-delay: 0.2s">
+                        <div class="p-6 text-center">
+                            <div class="mx-auto mb-4 p-3 bg-amber-100 dark:bg-amber-900/50 rounded-full w-fit">
+                                <i data-lucide="globe" class="h-8 w-8 text-amber-600 dark:text-amber-400"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">19th Century Philippines</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Rizal's Historical Context</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                Understand the colonial period and social conditions that shaped Rizal's worldview.
+                            </p>
+                            <a href="historical-context.html" class="inline-flex items-center justify-center w-full px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-amber-50 dark:hover:bg-amber-900/30 rounded-md transition-colors">
+                                Explore <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Early Life Card -->
+                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-all duration-300 cursor-pointer group animate-slideIn" style="animation-delay: 0.3s">
+                        <div class="p-6 text-center">
+                            <div class="mx-auto mb-4 p-3 bg-green-100 dark:bg-green-900/50 rounded-full w-fit">
+                                <i data-lucide="heart" class="h-8 w-8 text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Early Life</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Family & Childhood</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                Discover Rizal's family background, childhood experiences, and early education.
+                            </p>
+                            <a href="early-life.html" class="inline-flex items-center justify-center w-full px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-md transition-colors">
+                                Explore <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Higher Education Card -->
+                    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-all duration-300 cursor-pointer group animate-slideIn" style="animation-delay: 0.4s">
+                        <div class="p-6 text-center">
+                            <div class="mx-auto mb-4 p-3 bg-blue-100 dark:bg-blue-900/50 rounded-full w-fit">
+                                <i data-lucide="graduation-cap" class="h-8 w-8 text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Higher Education</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Life Abroad</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                Follow Rizal's journey through higher education in Manila, Europe, and beyond.
+                            </p>
+                            <a href="higher-education.html" class="inline-flex items-center justify-center w-full px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-md transition-colors">
+                                Explore <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Facts -->
+        <section class="py-16 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 animate-slideIn">
+                    Quick Facts About Rizal
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 transform hover:scale-105 transition-all duration-300 animate-slideIn bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700" style="animation-delay: 0.1s">
+                        <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-3">1861-1896</div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Lived for 35 years, leaving an indelible mark on Philippine history
+                        </p>
+                    </div>
+                    <div class="p-8 transform hover:scale-105 transition-all duration-300 animate-slideIn bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 cursor-pointer group" style="animation-delay: 0.2s" onclick="openNovelsModal()">
+                        <div class="text-4xl font-bold text-green-600 dark:text-green-400 mb-3 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors">
+                            2 Novels
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">
+                            Noli Me Tangere and El Filibusterismo exposed colonial abuses
+                        </p>
+                        <div class="mt-3 text-sm text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                            Click to learn more →
+                        </div>
+                    </div>
+                    <div class="p-8 transform hover:scale-105 transition-all duration-300 animate-slideIn bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 cursor-pointer group" style="animation-delay: 0.3s" onclick="openLanguagesModal()">
+                        <div class="text-4xl font-bold text-red-600 dark:text-red-400 mb-3 group-hover:text-red-700 dark:group-hover:text-red-300 transition-colors">
+                            Polyglot
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">
+                            Spoke 22 languages and was a true Renaissance man
+                        </p>
+                        <div class="mt-3 text-sm text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                            Click to explore languages →
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 px-4 bg-gradient-to-r from-blue-600 to-green-600 dark:from-blue-800 dark:to-green-800 text-white transition-colors duration-300">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-slideIn">
+                    Ready to Learn About Our National Hero?
+                </h2>
+                <p class="text-xl mb-8 opacity-90 animate-slideIn" style="animation-delay: 0.2s">
+                    Start your journey through the life and works of Dr. José Rizal
+                </p>
+                <a href="rizal-law.html" class="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-200 dark:text-blue-700 dark:hover:bg-gray-300 font-medium rounded-md transform hover:scale-105 transition-all duration-300 animate-slideIn" style="animation-delay: 0.4s">
+                    Begin Your Journey <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="book-open" class="h-8 w-8 text-blue-400"></i>
+                        <span class="font-bold text-xl">Rizal Learning Platform</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        An interactive educational platform dedicated to understanding the life, works, and legacy of Dr. José Rizal, the Philippines' national hero.
+                    </p>
+                    <div class="flex space-x-4">
+                        <i data-lucide="github" class="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"></i>
+                        <i data-lucide="mail" class="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Learning Modules</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="rizal-law.html" class="hover:text-white transition-colors duration-200">Republic Act 1425</a></li>
+                        <li><a href="historical-context.html" class="hover:text-white transition-colors duration-200">19th Century Philippines</a></li>
+                        <li><a href="early-life.html" class="hover:text-white transition-colors duration-200">Early Life & Family</a></li>
+                        <li><a href="higher-education.html" class="hover:text-white transition-colors duration-200">Higher Education</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">About</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="timeline.html" class="hover:text-white transition-colors duration-200">Timeline</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors duration-200">Resources</a></li>
+                        <li><a href="feedback.html" class="hover:text-white transition-colors duration-200">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Rizal Learning Platform. Created for educational purposes in compliance with Republic Act 1425.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Novels Modal -->
+    <div id="novels-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto w-full">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center gap-2">
+                            <i data-lucide="book-open" class="h-6 w-6 text-blue-600 dark:text-blue-400"></i>
+                            Rizal's Literary Masterpieces
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">
+                            The two novels that exposed colonial abuses and awakened Filipino consciousness
+                        </p>
+                    </div>
+                    <button onclick="closeNovelsModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                        <i data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Noli Me Tangere -->
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="images/noli.jpg" alt="Noli Me Tangere Book Cover" class="w-full rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="md:col-span-2 space-y-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Noli Me Tangere</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 italic">"Touch Me Not"</p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">
+                                            <i data-lucide="calendar" class="h-3 w-3 mr-1 inline"></i>
+                                            Published 1887
+                                        </span>
+                                        <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">
+                                            Berlin, Germany
+                                        </span>
+                                        <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">
+                                            First Novel
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Plot Summary</h4>
+                                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                                            The story follows Juan Crisóstomo Ibarra, a young Filipino who returns to his homeland after studying in Europe. He discovers the corruption and abuses of the Spanish colonial government and the Catholic Church, particularly through the character of Padre Dámaso, a corrupt friar.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Key Characters</h4>
+                                        <div class="grid grid-cols-2 gap-2 text-sm">
+                                            <div class="text-gray-700 dark:text-gray-300">• Juan Crisóstomo Ibarra - Protagonist</div>
+                                            <div class="text-gray-700 dark:text-gray-300">• María Clara - Love interest</div>
+                                            <div class="text-gray-700 dark:text-gray-300">• Padre Dámaso - Antagonist friar</div>
+                                            <div class="text-gray-700 dark:text-gray-300">• Elías - Ibarra's mysterious friend</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- El Filibusterismo -->
+                    <div class="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-red-200 dark:border-red-800">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="md:col-span-1">
+                                <img src="images/el.jpg" alt="El Filibusterismo Book Cover" class="w-full rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="md:col-span-2 space-y-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">El Filibusterismo</h3>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 italic">"The Reign of Greed"</p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">
+                                            <i data-lucide="calendar" class="h-3 w-3 mr-1 inline"></i>
+                                            Published 1891
+                                        </span>
+                                        <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">
+                                            Ghent, Belgium
+                                        </span>
+                                        <span class="bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">
+                                            Sequel
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Plot Summary</h4>
+                                        <p class="text-sm text-gray-700 dark:text-gray-300">
+                                            The sequel to Noli Me Tangere, this darker novel follows Simoun (Ibarra in disguise) as he returns to the Philippines seeking revenge against the colonial system. The story depicts the consequences of colonial oppression and the growing revolutionary sentiment.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Key Characters</h4>
+                                        <div class="grid grid-cols-2 gap-2 text-sm">
+                                            <div class="text-gray-700 dark:text-gray-300">• Simoun (Ibarra) - Protagonist</div>
+                                            <div class="text-gray-700 dark:text-gray-300">• Basilio - Medical student</div>
+                                            <div class="text-gray-700 dark:text-gray-300">• Isagani - Idealistic student</div>
+                                            <div class="text-gray-700 dark:text-gray-300">• Paulita Gómez - Isagani's love</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Languages Modal -->
+    <div id="languages-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg max-w-5xl max-h-[90vh] overflow-y-auto w-full">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 dark:text-white flex items-center gap-2">
+                            <i data-lucide="globe" class="h-6 w-6 text-green-600 dark:text-green-400"></i>
+                            Rizal the Polyglot: Master of 22 Languages
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 mt-2">
+                            José Rizal's remarkable linguistic abilities that made him a true citizen of the world
+                        </p>
+                    </div>
+                    <button onclick="closeLanguagesModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                        <i data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Overview -->
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="award" class="h-5 w-5 text-blue-600 dark:text-blue-400"></i>
+                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">Linguistic Genius</h3>
+                        </div>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Rizal's mastery of languages was not merely academic—it was a tool for understanding different cultures, accessing knowledge, and communicating his ideas to a global audience.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">8</div>
+                                <div class="text-xs text-gray-600 dark:text-gray-400">European Languages</div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-green-600 dark:text-green-400">8</div>
+                                <div class="text-xs text-gray-600 dark:text-gray-400">Asian Languages</div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">4</div>
+                                <div class="text-xs text-gray-600 dark:text-gray-400">Classical Languages</div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-red-600 dark:text-red-400">2</div>
+                                <div class="text-xs text-gray-600 dark:text-gray-400">Other Languages</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- European Languages -->
+                    <div class="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-red-200 dark:border-red-800">
+                        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-4">European Languages</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-semibold text-gray-800 dark:text-white">Spanish</h4>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">Native-level</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Primary language of education and literature</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-semibold text-gray-800 dark:text-white">English</h4>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">Fluent</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Learned during his studies in Europe</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-semibold text-gray-800 dark:text-white">French</h4>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">Fluent</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Studied in Paris, used for medical research</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-semibold text-gray-800 dark:text-white">German</h4>
+                                    <span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded">Fluent</span>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Learned in Germany, wrote letters in German</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            
+            // Force dark mode check on load
+            initializeTheme();
+            
+            // Add event listeners for theme toggles
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            if (document.getElementById('theme-toggle-mobile')) {
+                document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rizal's Life Timeline - Interactive Journey | Rizal Learning Platform</title>
+    <meta name="description" content="Explore the key events and milestones in the life of Dr. José Rizal, from birth to legacy, through an interactive timeline.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300 border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i data-lucide="book-open" class="h-8 w-8 text-blue-600 dark:text-blue-400"></i>
+                        <span class="font-bold text-xl text-gray-800 dark:text-white">Rizal Learning</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="rizal-law.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Rizal Law</a>
+                    <a href="historical-context.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Historical Context</a>
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Early Life</a>
+                    <a href="higher-education.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors">Higher Education</a>
+
+                    <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ml-2" onclick="toggleTheme()">
+                        <i data-lucide="sun" class="h-5 w-5 text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                        <i data-lucide="moon" class="h-5 w-5 text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleTheme()">
+                        <i data-lucide="sun" class="h-5 w-5 text-gray-600 dark:text-gray-300 dark:hidden"></i>
+                        <i data-lucide="moon" class="h-5 w-5 text-gray-600 dark:text-gray-300 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="toggleMobileMenu()">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Home</a>
+                    <a href="rizal-law.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Rizal Law</a>
+                    <a href="historical-context.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Historical Context</a>
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-
+                    <a href="early-life.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Early Life</a>
+                    <a href="higher-education.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium">Higher Education</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950 dark:to-blue-950 transition-colors duration-300">
+        <!-- Back Button -->
+        <div class="max-w-4xl mx-auto px-4 pt-6">
+            <button onclick="goBack()" class="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <i data-lucide="arrow-left" class="h-4 w-4 mr-2"></i>
+                Back
+            </button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="py-16 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 dark:bg-purple-900/50 rounded-full mb-4">
+                        <i data-lucide="clock" class="h-8 w-8 text-purple-600 dark:text-purple-400"></i>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 animate-slideIn">
+                        Rizal's Life Journey
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-6 animate-slideIn" style="animation-delay: 0.2s">
+                        Explore the key events and milestones from birth to legacy
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-2 animate-slideIn" style="animation-delay: 0.4s">
+                        <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">
+                            Interactive Timeline
+                        </span>
+                        <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                            35 Years of Impact
+                        </span>
+                        <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">
+                            National Hero
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="py-8 px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline line -->
+                <div class="relative">
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-blue-300 dark:bg-blue-700"></div>
+
+                    <!-- Timeline events -->
+                    <div class="space-y-12">
+                        <!-- Birth -->
+                        <div class="relative animate-slideIn">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-blue-500 dark:bg-blue-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="calendar" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:ml-auto md:pl-8 md:pr-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-sm font-medium">1861</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Birth in Calamba</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">June 19, 1861</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        José Protasio Rizal Mercado y Alonso Realonda was born in Calamba, Laguna, to Francisco Mercado and Teodora Alonso.
+                                    </p>
+                                    <a href="early-life.html" class="inline-flex items-center mt-4 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium">
+                                        Learn more about his early life
+                                        <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Early Education -->
+                        <div class="relative animate-slideIn" style="animation-delay: 0.1s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-green-500 dark:bg-green-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="book-open" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:mr-auto md:pr-8 md:pl-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 px-2 py-1 rounded text-sm font-medium">1872-1877</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Ateneo Municipal</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Secondary Education</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Rizal studied at the Ateneo Municipal de Manila, where he excelled academically and graduated with highest honors.
+                                    </p>
+                                    <a href="early-life.html" class="inline-flex items-center mt-4 text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 text-sm font-medium">
+                                        Learn about his education
+                                        <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- University -->
+                        <div class="relative animate-slideIn" style="animation-delay: 0.2s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-purple-500 dark:bg-purple-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="graduation-cap" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:ml-auto md:pl-8 md:pr-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-sm font-medium">1877-1882</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">University of Santo Tomas</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Higher Education in Manila</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Rizal enrolled at the University of Santo Tomas, studying medicine and philosophy, but grew disillusioned with the colonial education system.
+                                    </p>
+                                    <a href="higher-education.html" class="inline-flex items-center mt-4 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 text-sm font-medium">
+                                        Explore his university years
+                                        <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Europe -->
+                        <div class="relative animate-slideIn" style="animation-delay: 0.3s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-amber-500 dark:bg-amber-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="award" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:mr-auto md:pr-8 md:pl-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-200 px-2 py-1 rounded text-sm font-medium">1882-1887</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">European Education</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Studies in Spain and Beyond</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Rizal traveled to Europe to continue his medical studies and was exposed to liberal ideas that shaped his political thinking. During this time, he wrote his first novel, Noli Me Tangere.
+                                    </p>
+                                    <a href="higher-education.html" class="inline-flex items-center mt-4 text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 text-sm font-medium">
+                                        Discover his European journey
+                                        <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Return to Philippines -->
+                        <div class="relative animate-slideIn" style="animation-delay: 0.4s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-indigo-500 dark:bg-indigo-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="home" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:ml-auto md:pl-8 md:pr-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-sm font-medium">1887-1892</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Return to Philippines</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Medical Practice and Advocacy</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Rizal returned to the Philippines and practiced medicine while continuing his advocacy for reforms. He founded the La Liga Filipina and wrote El Filibusterismo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exile in Dapitan -->
+                        <div class="relative animate-slideIn" style="animation-delay: 0.5s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-orange-500 dark:bg-orange-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:mr-auto md:pr-8 md:pl-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-sm font-medium">1892-1896</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Exile in Dapitan</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Four Years of Service</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Exiled to Dapitan, Zamboanga del Norte, Rizal continued his medical practice, taught students, and contributed to the community's development through various projects.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Execution -->
+                        <div class="relative animate-slideIn" style="animation-delay: 0.6s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-red-500 dark:bg-red-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="flag" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:ml-auto md:pl-8 md:pr-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-200 px-2 py-1 rounded text-sm font-medium">1896</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Martyrdom</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">December 30, 1896</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Rizal was executed by firing squad at Bagumbayan (now Rizal Park) in Manila, after being convicted of rebellion. His martyrdom inspired the Philippine Revolution.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Legacy */}
+                        <div class="relative animate-slideIn" style="animation-delay: 0.7s">
+                            <div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-blue-500 dark:bg-blue-400 flex items-center justify-center z-10 mb-4 md:mb-0">
+                                <i data-lucide="book-open" class="h-5 w-5 text-white"></i>
+                            </div>
+                            <div class="md:w-5/12 md:mr-auto md:pr-8 md:pl-0 px-4">
+                                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300">
+                                    <div class="mb-4">
+                                        <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-sm font-medium">1956</span>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">Republic Act 1425</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">The Rizal Law</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">
+                                        Republic Act 1425 was enacted, requiring all schools in the Philippines to teach courses on the life, works, and writings of José Rizal.
+                                    </p>
+                                    <a href="rizal-law.html" class="inline-flex items-center mt-4 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium">
+                                        Learn about the Rizal Law
+                                        <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Navigation -->
+        <section class="py-16 px-4">
+            <div class="max-w-4xl mx-auto text-center animate-slideIn" style="animation-delay: 0.8s">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Explore More About Rizal</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="rizal-law.html" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105">
+                        Rizal Law
+                    </a>
+                    <a href="historical-context.html" class="inline-flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-700 dark:bg-amber-700 dark:hover:bg-amber-600 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105">
+                        Historical Context
+                    </a>
+                    <a href="early-life.html" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105">
+                        Early Life
+                    </a>
+                    <a href="higher-education.html" class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 text-white font-medium rounded-md transition-all duration-300 transform hover:scale-105">
+                        Higher Education
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="book-open" class="h-8 w-8 text-blue-400"></i>
+                        <span class="font-bold text-xl">Rizal Learning Platform</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        An interactive educational platform dedicated to understanding the life, works, and legacy of Dr. José Rizal, the Philippines' national hero.
+                    </p>
+                    <div class="flex space-x-4">
+                        <i data-lucide="github" class="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"></i>
+                        <i data-lucide="mail" class="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors duration-200"></i>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Learning Modules</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="rizal-law.html" class="hover:text-white transition-colors duration-200">Republic Act 1425</a></li>
+                        <li><a href="historical-context.html" class="hover:text-white transition-colors duration-200">19th Century Philippines</a></li>
+                        <li><a href="early-life.html" class="hover:text-white transition-colors duration-200">Early Life & Family</a></li>
+                        <li><a href="higher-education.html" class="hover:text-white transition-colors duration-200">Higher Education</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">About</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="timeline.html" class="hover:text-white transition-colors duration-200">Timeline</a></li>
+                        <li><a href="resources.html" class="hover:text-white transition-colors duration-200">Resources</a></li>
+                        <li><a href="feedback.html" class="hover:text-white transition-colors duration-200">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Rizal Learning Platform. Created for educational purposes in compliance with Republic Act 1425.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
