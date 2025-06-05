@@ -373,7 +373,41 @@
                     <div class="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-red-200 dark:border-red-800">
                         <div class="grid md:grid-cols-3 gap-6">
                             <div class="md:col-span-1">
-                                <img src="images/el.jpg" alt="El Filibusterismo Book Cover" class="w-full rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300">
+                                <img src="images/el                                ...existing code...
+                                    <script src="script.js"></script>
+                                    <script>
+                                        // Initialize Lucide icons
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            lucide.createIcons();
+                                            
+                                            // Force dark mode check on load
+                                            initializeTheme();
+                                            
+                                            // Add event listeners for theme toggles
+                                            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+                                            if (document.getElementById('theme-toggle-mobile')) {
+                                                document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+                                            }
+                                
+                                            // Mobile menu toggle
+                                            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                                            const mobileMenu = document.getElementById('mobile-menu');
+                                            if (mobileMenuBtn && mobileMenu) {
+                                                mobileMenuBtn.addEventListener('click', function() {
+                                                    mobileMenu.classList.toggle('hidden');
+                                                });
+                                                // Optional: Close menu when a link is clicked
+                                                mobileMenu.querySelectorAll('a').forEach(link => {
+                                                    link.addEventListener('click', () => {
+                                                        mobileMenu.classList.add('hidden');
+                                                    });
+                                                });
+                                            }
+                                        });
+                                    </script>
+                                </body>
+                                </html>
+                                ...existing code....jpg" alt="El Filibusterismo Book Cover" class="w-full rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300">
                             </div>
                             <div class="md:col-span-2 space-y-4">
                                 <div>
